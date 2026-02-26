@@ -1,31 +1,31 @@
-# Byte-compiled / optimized / DLL files
+# --- Python bytecode ---
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-*.egg
-
-# Installer logs
-pip-log.txt
-
-# Environments
-.env
-.venv
-env/
+# --- Virtual environments ---
 venv/
-ENV/
+.venv/
+env/
+# Added: general python distribution folders
+dist/
+build/
+*.egg-info/
 
-# IDEs
+# --- IDE settings ---
 .vscode/
 .idea/
+# Added: Linux editor swap files (Vim/Gedit)
+*.swp
+*~
 
-# OS generated files
+# --- OS metadata ---
 .DS_Store
-Thumbs.db 
+[Tt]humbs.db
+# Added: Linux directory metadata
+.directory
+.nfs*
+
+# --- Project Specific ---
+# create a .env for secrets
+.env
