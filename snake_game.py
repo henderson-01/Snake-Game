@@ -7,7 +7,7 @@ pygame.init()
 
 # Define Colors
 NOKIA_GREEN = (199, 240, 216)  # C7F0D8
-NOKIA_DARK = (67, 82, 61)     # #43523D
+NOKIA_DARK = (67, 82, 61)  # #43523D
 # Additional colors for game over message/highlights if needed
 RED = (213, 50, 80)
 
@@ -17,7 +17,7 @@ DIS_WIDTH = 550
 DIS_HEIGHT = 500
 
 dis = pygame.display.set_mode((DIS_WIDTH, DIS_HEIGHT))
-pygame.display.set_caption('Snake Game')
+pygame.display.set_caption("Snake Game")
 
 clock = pygame.time.Clock()
 
@@ -36,14 +36,13 @@ def your_score(score):
 
 def our_snake(snake_block, snake_list):
     for x in snake_list:
-        pygame.draw.rect(dis, NOKIA_DARK, [
-                         x[0], x[1], snake_block, snake_block])
+        pygame.draw.rect(dis, NOKIA_DARK, [x[0], x[1], snake_block, snake_block])
 
 
 def message(msg, color):
     mesg = font_style.render(msg, True, color)
     # Center the message
-    text_rect = mesg.get_rect(center=(DIS_WIDTH/2, DIS_HEIGHT/2))
+    text_rect = mesg.get_rect(center=(DIS_WIDTH / 2, DIS_HEIGHT / 2))
     dis.blit(mesg, text_rect)
 
 
@@ -65,14 +64,15 @@ def gameLoop():
     Length_of_snake = 1
 
     # Place food randomly aligned with the grid
-    foodx = round(random.randrange(0, DIS_WIDTH - SNAKE_BLOCK) /
-                  SNAKE_BLOCK) * SNAKE_BLOCK
-    foody = round(random.randrange(0, DIS_HEIGHT -
-                  SNAKE_BLOCK) / SNAKE_BLOCK) * SNAKE_BLOCK
+    foodx = (
+        round(random.randrange(0, DIS_WIDTH - SNAKE_BLOCK) / SNAKE_BLOCK) * SNAKE_BLOCK
+    )
+    foody = (
+        round(random.randrange(0, DIS_HEIGHT - SNAKE_BLOCK) / SNAKE_BLOCK) * SNAKE_BLOCK
+    )
 
     while not game_over:
-
-        while game_close == True:
+        while game_close:
             dis.fill(NOKIA_GREEN)
             message("You Lost! Press C-Play Again or Q-Quit", RED)
             your_score(Length_of_snake - 1)
@@ -117,8 +117,7 @@ def gameLoop():
         dis.fill(NOKIA_GREEN)
 
         # Draw Food
-        pygame.draw.rect(dis, NOKIA_DARK, [
-                         foodx, foody, SNAKE_BLOCK, SNAKE_BLOCK])
+        pygame.draw.rect(dis, NOKIA_DARK, [foodx, foody, SNAKE_BLOCK, SNAKE_BLOCK])
 
         # Snake Movement Logic
         snake_Head = []
@@ -140,10 +139,14 @@ def gameLoop():
 
         # Eating Food
         if x1 == foodx and y1 == foody:
-            foodx = round(random.randrange(
-                0, DIS_WIDTH - SNAKE_BLOCK) / SNAKE_BLOCK) * SNAKE_BLOCK
-            foody = round(random.randrange(
-                0, DIS_HEIGHT - SNAKE_BLOCK) / SNAKE_BLOCK) * SNAKE_BLOCK
+            foodx = (
+                round(random.randrange(0, DIS_WIDTH - SNAKE_BLOCK) / SNAKE_BLOCK)
+                * SNAKE_BLOCK
+            )
+            foody = (
+                round(random.randrange(0, DIS_HEIGHT - SNAKE_BLOCK) / SNAKE_BLOCK)
+                * SNAKE_BLOCK
+            )
             Length_of_snake += 1
 
         clock.tick(SNAKE_SPEED)
@@ -152,5 +155,5 @@ def gameLoop():
     sys.exit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     gameLoop()
