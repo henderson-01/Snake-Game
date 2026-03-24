@@ -1,12 +1,12 @@
 # Classic Snake Game 🐍 
 
+## 📖 Description
 A retro-style Snake game built with Python and Pygame. This project recreates the classic experience with a Nokia-inspired color palette.
+Control the snake, eat the food to grow longer, and avoid hitting the walls or your own tail! As you eat, and your score increases. 
 
-## Description
+*I made this game as part of my Python coding learning journey.*
 
-Control the snake, eat the food to grow longer, and avoid hitting the walls or your own tail! As you eat, your score increases.
-
-## Features
+## ✅ Features
 
 - **Classic Gameplay:** Navigate a grid to eat food.
 - **Retro Aesthetics:** "Nokia Green" background and dark elements.
@@ -14,7 +14,7 @@ Control the snake, eat the food to grow longer, and avoid hitting the walls or y
 - **Game Over Screen:** Options to restart (`C`) or quit (`Q`).
 - **Input Handling:** Logic to prevent the snake from reversing into itself immediately.
 
-## Prerequisites
+## 💻 Prerequisites
 
 This guide is tailored for **Ubuntu Desktop** users.
 
@@ -26,7 +26,7 @@ Ensure your system has Python and the virtual environment creator installed:
 sudo apt update && sudo apt install python3-venv -y
 ```
 
-## Installation
+## 👇 Installation
 
 ### 2. Set Up a Virtual Environment
 
@@ -47,7 +47,7 @@ It is best practice to isolate project dependencies.
     pip install pygame
     ```
 
-## How to Play
+## ▶️ How to Play
 
 1.  Navigate to the folder containing the game in your terminal.
 2.  Run the game:
@@ -59,7 +59,7 @@ It is best practice to isolate project dependencies.
     - **Q:** Quit the game (when on the Game Over screen).
     - **C:** Play Again (when on the Game Over screen).
 
-## Code Highlights (For Learners)
+## 💡 Code Highlights (For Learners)
 
 If you are looking at the code, here are the key concepts used:
 - **Grid System:** The game uses a block size (`SNAKE_BLOCK = 15`). All positions (snake segments and food) are calculated to snap to this grid using math logic.
@@ -68,6 +68,6 @@ If you are looking at the code, here are the key concepts used:
 
 ---
 
-## Disclaimer
+## ⚠️ Disclaimer
 
-This project is provided "as-is" without any warranty of any kind. I am not responsible for any issues, data loss, or "explosions" (code-related or otherwise) that may occur from using this software. **Use it at your own risk.**
+This project is provided "as-is" without any warranty of any kind. I am not responsible for any issues, data loss, or problems caused (code-related or otherwise) that may occur from using this Information. **Use it at your own risk.**
