@@ -37,13 +37,13 @@ It is best practice to isolate project dependencies.
 - **Create the environment:**
 
     ```bash
-    python3 -m venv venv
+    python3 -m venv .venv
     ```
 
 - **Activate it:**
 
     ```bash
-    source venv/bin/activate
+    source .venv/bin/activate
     ```
 
 - **Install Pygame:**
