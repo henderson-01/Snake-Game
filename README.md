@@ -5,7 +5,9 @@
 A retro-style Snake game built with Python and Pygame. This project recreates the classic experience with a Nokia-inspired color palette.
 Control the snake, eat the food to grow longer, and avoid hitting the walls or your own tail! As you eat, and your score increases.
 
-*I made this game as part of my Python coding learning journey.*
+> [!NOTE]
+> *I made this game as part of my Python coding learning journey.*
+---
 
 ## ✅ Features
 
@@ -14,6 +16,8 @@ Control the snake, eat the food to grow longer, and avoid hitting the walls or y
 - **Score Tracking:** Real-time score display.
 - **Game Over Screen:** Options to restart (`C`) or quit (`Q`).
 - **Input Handling:** Logic to prevent the snake from reversing into itself immediately.
+
+---
 
 ## 💻 Prerequisites
 
@@ -26,6 +30,8 @@ Ensure your system has Python and the virtual environment creator installed:
 ```bash
 sudo apt update && sudo apt install python3-venv -y
 ```
+
+---
 
 ## 👇 Installation
 
@@ -53,6 +59,8 @@ It is best practice to isolate project dependencies.
     pip install pygame
     ```
 
+---
+
 ## ▶️ How to Play
 
 - Navigate to the folder containing the game in your terminal.
@@ -67,6 +75,8 @@ It is best practice to isolate project dependencies.
   - **Q:** Quit the game (when on the Game Over screen).
   - **C:** Play Again (when on the Game Over screen).
 
+---
+
 ## 💡 Code Highlights (For Learners)
 
 If you are looking at the code, here are the key concepts used:
@@ -79,4 +89,5 @@ If you are looking at the code, here are the key concepts used:
 
 ## ⚠️ Disclaimer
 
-This project is provided "as-is" without any warranty of any kind. I am not responsible for any issues, data loss, or problems caused (code-related or otherwise) that may occur from using this Information. **Use it at your own risk.**
+> [!CAUTION]
+> This project is provided "as-is" without any warranty of any kind. I am not responsible for any issues, data loss, or problems caused (code-related or otherwise) that may occur from using this Information. **Use it at your own risk.**
