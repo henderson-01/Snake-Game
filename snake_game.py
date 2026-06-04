@@ -1,7 +1,7 @@
-import pygame
 import random
 import sys
 
+import pygame
 
 pygame.init()
 
@@ -13,8 +13,8 @@ RED = (213, 50, 80)
 
 
 # Display Dimensions
-DIS_WIDTH = 550
-DIS_HEIGHT = 500
+DIS_WIDTH = 650
+DIS_HEIGHT = 600
 
 dis = pygame.display.set_mode((DIS_WIDTH, DIS_HEIGHT))
 pygame.display.set_caption("Snake Game")
@@ -25,8 +25,10 @@ SNAKE_BLOCK = 15  # Increased block size for better visibility
 SNAKE_SPEED = 8
 
 # Fonts
-font_style = pygame.font.SysFont("bahnschrift", 25)
-score_font = pygame.font.SysFont("comicsansms", 35)
+font_style = pygame.font.SysFont(
+    ["bahnschrift", "arial", "helvetica", "sans-serif"], 25
+)
+score_font = pygame.font.SysFont(["comicsansms", "arial", "sans-serif"], 35)
 
 
 def your_score(score):
@@ -63,12 +65,15 @@ def gameLoop():
     snake_List = []
     Length_of_snake = 1
 
+    current_food_size = SNAKE_BLOCK * 2 if (Length_of_snake % 3 == 0) else SNAKE_BLOCK
     # Place food randomly aligned with the grid
     foodx = (
-        round(random.randrange(0, DIS_WIDTH - SNAKE_BLOCK) / SNAKE_BLOCK) * SNAKE_BLOCK
+        round(random.randrange(0, DIS_WIDTH - current_food_size) / SNAKE_BLOCK)
+        * SNAKE_BLOCK
     )
     foody = (
-        round(random.randrange(0, DIS_HEIGHT - SNAKE_BLOCK) / SNAKE_BLOCK) * SNAKE_BLOCK
+        round(random.randrange(0, DIS_HEIGHT - current_food_size) / SNAKE_BLOCK)
+        * SNAKE_BLOCK
     )
 
     while not game_over:
@@ -117,7 +122,9 @@ def gameLoop():
         dis.fill(NOKIA_GREEN)
 
         # Draw Food
-        pygame.draw.rect(dis, NOKIA_DARK, [foodx, foody, SNAKE_BLOCK, SNAKE_BLOCK])
+        pygame.draw.rect(
+            dis, NOKIA_DARK, [foodx, foody, current_food_size, current_food_size]
+        )
 
         # Snake Movement Logic
         snake_Head = []
@@ -138,16 +145,24 @@ def gameLoop():
         pygame.display.update()
 
         # Eating Food
-        if x1 == foodx and y1 == foody:
+        if (
+            x1 >= foodx
+            and x1 < foodx + current_food_size
+            and y1 >= foody
+            and y1 < foody + current_food_size
+        ):
+            Length_of_snake += 1
+            current_food_size = (
+                SNAKE_BLOCK * 2 if (Length_of_snake % 3 == 0) else SNAKE_BLOCK
+            )
             foodx = (
-                round(random.randrange(0, DIS_WIDTH - SNAKE_BLOCK) / SNAKE_BLOCK)
+                round(random.randrange(0, DIS_WIDTH - current_food_size) / SNAKE_BLOCK)
                 * SNAKE_BLOCK
             )
             foody = (
-                round(random.randrange(0, DIS_HEIGHT - SNAKE_BLOCK) / SNAKE_BLOCK)
+                round(random.randrange(0, DIS_HEIGHT - current_food_size) / SNAKE_BLOCK)
                 * SNAKE_BLOCK
             )
-            Length_of_snake += 1
 
         clock.tick(SNAKE_SPEED)
 
