@@ -12,6 +12,7 @@ Control the snake, eat the food to grow longer, and avoid hitting the walls or y
 ## ✅ Features
 
 - **Classic Gameplay:** Navigate a grid to eat food.
+- **Dynamic Food:** Every third piece of food grows to double the size!
 - **Retro Aesthetics:** "Nokia Green" background and dark elements.
 - **Score Tracking:** Real-time score display.
 - **Game Over Screen:** Options to restart (`C`) or quit (`Q`).
@@ -82,6 +83,7 @@ It is best practice to isolate project dependencies.
 If you are looking at the code, here are the key concepts used:
 
 - **Grid System:** The game uses a block size (`SNAKE_BLOCK = 15`). All positions (snake segments and food) are calculated to snap to this grid using math logic.
+- **Dynamic Sizing:** Uses the modulo operator to double the food size for every third item.
 - **Game Loop:** The `while not game_over:` loop is the heart of the game, updating the screen and checking logic every frame.
 - **List Management:** The snake is represented as a list of coordinates (`snake_List`), growing as food is eaten and removing the tail as it moves.
 
@@ -90,4 +92,4 @@ If you are looking at the code, here are the key concepts used:
 ## ⚠️ Disclaimer
 
 > [!CAUTION]
-> This project is provided "as-is" without any warranty of any kind. I am not responsible for any issues, data loss, or problems caused (code-related or otherwise) that may occur from using this Information. **Use it at your own risk.**
+> This project is provided "as-is" without any warranty of any kind. I am not responsible for any issues, data loss, or problems caused (code-related or otherwise). **Use it at your own risk.**
