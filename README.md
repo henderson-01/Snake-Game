@@ -76,6 +76,12 @@ It is best practice to isolate project dependencies.
   - **Q:** Quit the game (when on the Game Over screen).
   - **C:** Play Again (when on the Game Over screen).
 
+## 📸 Screenshots of the Game
+
+![screenshoot1 snake game](./images/Screenshot1.png)
+
+![screenshot2 snake game](./images/Screenshot2.png)
+
 ---
 
 ## 💡 Code Highlights (For Learners)
