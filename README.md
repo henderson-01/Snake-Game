@@ -22,59 +22,48 @@ Control the snake, eat the food to grow longer, and avoid hitting the walls or y
 
 ## 💻 Prerequisites
 
-This guide is tailored for **Ubuntu Desktop** users.
+This project uses [uv](https://github.com/astral-sh/uv), an extremely fast Python package and project manager.
 
-### 1. Install System Dependencies
-
-Ensure your system has Python and the virtual environment creator installed:
+If you don't have `uv` installed yet, you can install it on Ubuntu/macOS using:
 
 ```bash
-sudo apt update && sudo apt install python3-venv -y
+curl -LsSf [https://astral.sh/uv/install.sh](https://astral.sh/uv/install.sh) | sh
+
 ```
+
+*(For Windows or other installation methods, see the [official uv documentation](https://www.google.com/search?q=https://docs.astral.sh/uv/getting-started/installation/).)*
 
 ---
 
 ## 👇 Installation
 
-### 2. Set Up a Virtual Environment
+With `uv`, setting up the project is practically instant.
 
-It is best practice to isolate project dependencies.
+- **Open your terminal** in the folder containing the project files.
+- **Sync the project:**
+Run the following command to automatically create an isolated virtual environment and install all necessary dependencies (like Pygame):
 
-- **Open your terminal** in the folder containing `snake_game.py`.
-- **Create the environment:**
+```bash
+uv sync
 
-    ```bash
-    python3 -m venv .venv
-    ```
-
-- **Activate it:**
-
-    ```bash
-    source .venv/bin/activate
-    ```
-
-- **Install Pygame:**
-    Once active (you will see `(venv)` in your terminal), install the required library:
-
-    ```bash
-    pip install pygame
-    ```
+```
 
 ---
 
 ## ▶️ How to Play
 
 - Navigate to the folder containing the game in your terminal.
-- Run the game:
+- Run the game using `uv` (this automatically uses the correct environment):
 
-    ```bash
-    python snake_game.py
-    ```
+```bash
+uv run snake_game.py
+
+```
 
 - **Controls:**
-  - **Arrow Keys:** Move Up, Down, Left, Right.
-  - **Q:** Quit the game (when on the Game Over screen).
-  - **C:** Play Again (when on the Game Over screen).
+- **Arrow Keys:** Move Up, Down, Left, Right.
+- **Q:** Quit the game (when on the Game Over screen).
+- **C:** Play Again (when on the Game Over screen).
 
 ## 📸 Screenshots of the Game
 
